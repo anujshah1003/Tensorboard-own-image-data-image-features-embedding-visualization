@@ -1,6 +1,12 @@
 # Tensorboard-own-image-data-image-features-embedding-visualization
 Learn how to visualize your own image data or features on Tensorboard Embedding Visualizer
 
+# Libraries:
+    keras-1.2.1
+    Tensorflow -1.0.1
+    python-3.5
+
+#Run this embedding visualization
 To run the embeddings already provided in embedding-logs. Download all the files.
 
     In the embedding-logs/projector_config.pbtxt 
@@ -29,10 +35,13 @@ To run the embeddings launch tensor board
        
 ![Alt text]( https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/tensorboard.PNG?raw=true "tensorboard")
 
-I have used 4 categories with 100 samples in each class - Cats, Dogs, Horses, Humans(Horse riders).
+# Data used in this Example
+I have used 4 categories with 100 samples in each class - Cats, Dogs, Horses, Humans(Horse riders).The data are stored in data.zip folder
 The Pretrained VGG16 is used to obtain feature vector of size 4096 from the penultimate layer of the network.
 
+# Using VGG16 model to obtain feature vectors
 If you want to use VGG16 as feature extractor for your own data you can look into [vgg16-feature-extraction.py](https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/vgg16-feature-extraction.py) script.
+Download the VGG16 weights by reading the [VGG_model/download_vgg16_weights.md](https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/VGG_model/download_vgg16_weights.md)  and save it in VGG_model directory
 The script will save your extracted features in feature_vectors.txt file as well as feature_vectors.pkl file. The shape of the obtained feature vector will be (num_samples,feature_vector_size).
 
     num_samples = number of images (in this example 400)
