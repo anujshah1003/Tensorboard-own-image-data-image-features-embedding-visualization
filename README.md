@@ -27,6 +27,7 @@ To run the embeddings launch tensor board
        
        Then go to the embedding options in Tensorboard
        
+![Alt text]( https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/tensorboard.PNG, "tensorboard")
 
 I have used 4 categories with 100 samples in each class - Cats, Dogs, Horses, Humans(Horse riders).
 The Pretrained VGG16 is used to obtain feature vector of size 4096 from the penultimate layer of the network.
