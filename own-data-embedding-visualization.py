@@ -14,8 +14,6 @@ PATH = os.getcwd()
 LOG_DIR = PATH+ '/embedding-logs'
 #metadata = os.path.join(LOG_DIR, 'metadata2.tsv')
 
-
-
 #%%
 data_path = PATH + '/data'
 data_dir_list = os.listdir(data_path)
@@ -35,13 +33,15 @@ img_data = np.array(img_data)
 #%%
 
 feature_vectors = np.loadtxt('feature_vectors_400_samples.txt')
-
 print ("feature_vectors_shape:",feature_vectors.shape)
 print ("num of images:",feature_vectors.shape[0])
 print ("size of individual feature vector:",feature_vectors.shape[1])
 
 num_of_samples=feature_vectors.shape[0]
-num_of_samples_each_class = 202
+num_of_samples_each_class = 100
+
+features = tf.Variable(feature_vectors, name='features')
+
 
 y = np.ones((num_of_samples,),dtype='int64')
 
@@ -58,7 +58,7 @@ names = ['cats','dogs','horses','humans']
 #        metadata_file.write('{}\n'.format(c))
 metadata_file = open(os.path.join(LOG_DIR, 'metadata_4_classes.tsv'), 'w')
 metadata_file.write('Class\tName\n')
-k=202
+k=100 # num of samples in each class
 j=0
 #for i in range(210):
 #    metadata_file.write('%06d\t%s\n' % (i, names[y[i]]))
@@ -70,11 +70,7 @@ for i in range(num_of_samples):
     #metadata_file.write('%06d\t%s\n' % (j, c))
 metadata_file.close()
        
-
-features = tf.Variable(feature_vectors, name='features')
-
-#%%
-
+    
 # Taken from: https://github.com/tensorflow/tensorflow/issues/6322
 def images_to_sprite(data):
     """Creates the sprite image along with any necessary padding
