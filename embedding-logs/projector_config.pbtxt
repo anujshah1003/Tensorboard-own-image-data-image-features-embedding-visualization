@@ -1,0 +1,9 @@
+embeddings {
+  tensor_name: "features_2:0"
+  metadata_path: "D:\\Technical_works\\tensorflow\\own-data-embedding-visualization-vgg-16/embedding-logs\\metadata_4_classes.tsv"
+  sprite {
+    image_path: "D:\\Technical_works\\tensorflow\\own-data-embedding-visualization-vgg-16/embedding-logs\\sprite_4_classes.png"
+    single_image_dim: 224
+    single_image_dim: 224
+  }
+}
