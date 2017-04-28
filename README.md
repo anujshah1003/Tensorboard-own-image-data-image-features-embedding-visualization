@@ -9,14 +9,14 @@ Learn how to visualize your own image data or features on Tensorboard Embedding 
 # Runing the embedding visualization using the logs given in this repository
 To run the embeddings already provided in embedding-logs. Download all the files.
 
-    In the [embedding-logs/checkpoint] (https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/embedding-logs/checkpoint)
+    In the embedding-logs/checkpoint
     
     model_checkpoint_path: "D:\\Technical_works\\tensorflow\\own-data-embedding-visualization-vgg-16/embedding-     logs\\images_4_classes.ckpt"
     all_model_checkpoint_paths: "D:\\Technical_works\\tensorflow\\own-data-embedding-visualization-vgg-16/embedding-logs\\images_4_classes.ckpt"
     
     Change the model_checkpoint_path and all_model_checkpoint_paths to your path
 
-    In the [embedding-logs/projector_config.pbtxt] (https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/embedding-logs/projector_config.pbtxt) 
+    In the embedding-logs/projector_config.pbtxt
        
             embeddings {
         tensor_name: "features:0"
