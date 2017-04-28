@@ -6,10 +6,17 @@ Learn how to visualize your own image data or features on Tensorboard Embedding 
     Tensorflow -1.0.1
     python-3.5
 
-#Run this embedding visualization
+# Runing the embedding visualization using the logs given in this repository
 To run the embeddings already provided in embedding-logs. Download all the files.
 
-    In the embedding-logs/projector_config.pbtxt 
+    In the [embedding-logs/checkpoint] (https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/embedding-logs/checkpoint)
+    
+    model_checkpoint_path: "D:\\Technical_works\\tensorflow\\own-data-embedding-visualization-vgg-16/embedding-     logs\\images_4_classes.ckpt"
+    all_model_checkpoint_paths: "D:\\Technical_works\\tensorflow\\own-data-embedding-visualization-vgg-16/embedding-logs\\images_4_classes.ckpt"
+    
+    Change the model_checkpoint_path and all_model_checkpoint_paths to your path
+
+    In the [embedding-logs/projector_config.pbtxt] (https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/embedding-logs/projector_config.pbtxt) 
        
             embeddings {
         tensor_name: "features:0"
@@ -35,6 +42,23 @@ To run the embeddings launch tensor board
        
 ![Alt text]( https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/tensorboard.PNG?raw=true "tensorboard")
 
+# To regenerate the embedding logs for feature vectors given in this repositoty
+
+To regenerate the same embedding logs you can use the feature_vectors_400_samples.txt in the feature_vectors.zip file.
+
+If you want to generate embedding visulaization for the given feature vector data, you can directly look into 
+[own-data-embedding-visualization.py](https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/own-data-embedding-visualization.py) script to visualize your feature vectors in embedding visualizer.
+
+The code is described block wise in the next section of # Generating the embedding logs for your own feature vectors
+Running this script will generate the embedding logs specified to your system path .
+Then you can run the tensorboard using
+
+     tensorboard --logdir=/path/to/your log/embedding-logs --port=6006
+     
+       Then open localhost:6006 in a browser
+       
+       Then go to the embedding options in Tensorboard
+
 # Data used in this Example
 I have used 4 categories with 100 samples in each class - Cats, Dogs, Horses, Humans(Horse riders).The data are stored in data.zip folder
 The Pretrained VGG16 is used to obtain feature vector of size 4096 from the penultimate layer of the network.
@@ -48,8 +72,6 @@ The script will save your extracted features in feature_vectors.txt file as well
     feature_vector_size = size of feature vector for each image (in this example its 4096)
 
 # Generating the embedding logs for your own feature vectors
-
-To regenerate the same embedding logs you can use the feature_vectors_400_samples.txt in the feature_vectors.zip file.
 
 If you want to generate embedding visulaization for your own feature vector data that you have- you can directly look into 
 [own-data-embedding-visualization.py](https://github.com/anujshah1003/Tensorboard-own-image-data-image-features-embedding-visualization/blob/master/own-data-embedding-visualization.py) script to visualize your feature vectors in embedding visualizer.
