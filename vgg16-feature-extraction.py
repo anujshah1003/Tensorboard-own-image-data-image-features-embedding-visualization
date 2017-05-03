@@ -12,8 +12,6 @@ import keras
 # File paths for the model, all of these except the CNN Weights are 
 # provided in the repo, See the VGG_model/README.md to download VGG weights
 CNN_weights_file_name   = 'VGG_model/vgg16_weights.h5'
-image_file_name = 'elephant.jpg'
-question = u'What animal is in the picture?'
 
 
 # Chagne the value of verbose to 0 to avoid printing the progress statements
