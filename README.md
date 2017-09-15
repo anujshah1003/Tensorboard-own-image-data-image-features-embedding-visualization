@@ -35,7 +35,10 @@ To run the embeddings already provided in embedding-logs. Download all the files
     
 To run the embeddings launch tensor board 
 
-     tensorboard --logdir=/path/to/your log/embedding-logs --port=6006
+     tensorboard --logdir=/path/to/your_log/embedding-logs --port=6006
+     
+     ## Please make sure there is no gap between the name of your directory-
+        for e.g- folder name will not work it has to be folder_name
      
        Then open localhost:6006 in a browser
        
